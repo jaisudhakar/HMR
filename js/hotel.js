@@ -303,6 +303,9 @@
   showQuote(0);
   autoplay();
 
+  const dumSteps = $('[data-dum-steps]');
+  if (dumSteps) new IntersectionObserver(([e], o) => { if (e.isIntersecting) { dumSteps.classList.add('is-lit'); o.disconnect(); } }, { threshold: .3 }).observe(dumSteps);
+
   /* ------------------------------------------------------------------
      Newsletter & keyboard
      ------------------------------------------------------------------ */

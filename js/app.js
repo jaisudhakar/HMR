@@ -19,7 +19,8 @@
   const media = (dish, extra = '') => dish.img
     ? `<img src="${dish.img}" alt="${escapeHtml(dish.name)}" loading="lazy" class="${dish.tall ? 'is-tall' : ''} ${extra}">`
     : `<div class="plate-ph"><span>HMR</span></div>`;
-  const dietBadges = dish => dish.diet.map(d => `<span class="diet diet--${d}" title="${d === 'v' ? 'Vegetarian' : 'Gluten-free'}">${d.toUpperCase()}</span>`).join('');
+  const DIET = { v: ['V', 'Vegetarian'], gf: ['GF', 'Gluten-free'], hot: ['Spicy', 'Spicy'] };
+  const dietBadges = dish => dish.diet.map(d => `<span class="diet diet--${d}" title="${DIET[d][1]}">${DIET[d][0]}</span>`).join('');
 
   /* ------------------------------------------------------------------
      Preloader & hero entrance
@@ -30,7 +31,7 @@
     setTimeout(() => {
       document.body.classList.remove('is-loading');
       requestAnimationFrame(() => document.body.classList.add('is-ready'));
-      countUp($('.stat-card [data-count-to]'), 900);
+      $$('.hero [data-count-to]').forEach(el => countUp(el, 900));
     }, reduceMotion ? 0 : wait);
   };
   if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready, { once: true });
@@ -51,11 +52,11 @@
   const sectionObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      const id = { hotel: 'amenities', reviews: 'gallery', location: 'contact', book: 'rooms' }[e.target.id] || e.target.id;
+      const id = { hotel: 'amenities', reviews: 'gallery', location: 'contact', book: 'biryani' }[e.target.id] || e.target.id;
       navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['book', 'menu', 'rooms', 'amenities', 'hotel', 'gallery', 'reviews', 'location', 'contact']
+  ['book', 'biryani', 'menu', 'rooms', 'amenities', 'hotel', 'gallery', 'reviews', 'location', 'contact']
     .forEach(id => { const el = document.getElementById(id); el && sectionObs.observe(el); });
 
   // Mobile nav
@@ -165,13 +166,17 @@
     });
   }
 
-  $('[data-spin]').addEventListener('click', () => {
-    const plate = $('.hero__plate');
-    plate.classList.remove('is-spinning');
-    void plate.offsetWidth;
-    plate.classList.add('is-spinning');
-    plate.addEventListener('animationend', () => plate.classList.remove('is-spinning'), { once: true });
-  });
+  // Handi lid: lifts on its own after the intro, and on demand
+  const handi = $('[data-handi]');
+  const spinBtn = $('[data-spin]');
+  const setLid = open => {
+    handi.classList.toggle('is-open', open);
+    spinBtn.setAttribute('aria-pressed', String(open));
+    spinBtn.setAttribute('aria-label', open ? 'Close the lid of the handi' : 'Lift the lid of the handi');
+    $('[data-spin-label]').textContent = open ? 'Close lid' : 'Lift lid';
+  };
+  spinBtn.addEventListener('click', () => setLid(!handi.classList.contains('is-open')));
+  setTimeout(() => setLid(true), reduceMotion ? 0 : 2600);
 
   /* ------------------------------------------------------------------
      Scroll reveal & counters
@@ -217,7 +222,7 @@
   const listEl = $('[data-dishes]');
   const searchEl = $('[data-search]');
   const emptyEl = $('[data-empty]');
-  const state = { cat: 'all', q: '', view: store.get('view', 'list'), featured: 'wagyu' };
+  const state = { cat: 'all', q: '', view: store.get('view', 'list'), featured: 'signature' };
 
   chipsEl.insertAdjacentHTML('beforeend', categories.map(c =>
     `<button class="chip" type="button" role="tab" data-cat="${c.id}" aria-selected="false">${c.label}</button>`).join(''));
@@ -756,6 +761,11 @@
   }
   toastEl.addEventListener('click', e => { if (e.target.closest('[data-toast-open]')) { toastEl.classList.remove('is-on'); openCart(); } });
 
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-quick-add]');
+    if (b) addToCart(b.dataset.quickAdd, 1, b, $('img', b.closest('[data-quick-card]') || document.body));
+  });
+
   /* ------------------------------------------------------------------
      Keyboard
      ------------------------------------------------------------------ */
@@ -779,7 +789,7 @@
      ------------------------------------------------------------------ */
   setView(state.view);
   setCat('all');
-  setFeatured(byId.wagyu, { animate: false });
+  setFeatured(byId.signature, { animate: false });
   updateCartUI();
 
   // Shared helpers for js/hotel.js

@@ -30,23 +30,24 @@ window.HMR_HOTEL = {
 
   gallery: [
     { img: 'assets/img/hotel/lobby.svg', cat: 'hotel', title: 'The Grand Lobby', wide: true },
-    { img: 'assets/img/featured.webp', cat: 'dining', title: 'Ember — signature wagyu' },
+    { img: 'assets/img/biryani/signature-biryani.webp', cat: 'dining', title: 'The HMR Signature Handi Biryani' },
     { img: 'assets/img/hotel/presidential-suite.svg', cat: 'rooms', title: 'Presidential Suite', tall: true },
     { img: 'assets/img/hotel/pool.svg', cat: 'wellness', title: 'Rooftop infinity pool' },
     { img: 'assets/img/hotel/deluxe-king.svg', cat: 'rooms', title: 'Deluxe King Room' },
     { img: 'assets/img/hotel/spa.svg', cat: 'wellness', title: 'The Copper Spa', wide: true },
     { img: 'assets/img/fondant.webp', cat: 'dining', title: 'Dark chocolate fondant' },
     { img: 'assets/img/hotel/terrace-room.svg', cat: 'rooms', title: 'Garden Terrace Room' },
-    { img: 'assets/img/salmon.webp', cat: 'dining', title: 'Atlantic salmon' },
+    { img: 'assets/img/biryani/mutton-biryani.webp', cat: 'dining', title: 'Hyderabadi mutton biryani' },
+    { img: 'assets/img/biryani/prawn-biryani.webp', cat: 'dining', title: 'Jhinga biryani' },
     { img: 'assets/img/hotel/executive-suite.svg', cat: 'rooms', title: 'Executive Suite', wide: true },
     { img: 'assets/img/hotel/fitness.svg', cat: 'wellness', title: 'Fitness studio' }
   ],
 
   reviews: [
-    { quote: 'The most restful night I have had in years. Turndown, the pillow menu, a wagyu at midnight — every detail was considered.', name: 'Amelia R.', trip: 'Executive Suite · Business trip', rating: 5 },
+    { quote: 'We came for the suite and stayed for the biryani. They opened the copper handi at our door — the saffron steam filled the room. Best biryani I have had outside Hyderabad.', name: 'Amelia R.', trip: 'Executive Suite · Business trip', rating: 5 },
     { quote: 'We celebrated our anniversary in the Garden Terrace Room. The team surprised us with a fondant and candles on the terrace.', name: 'Daniel & Priya', trip: 'Garden Terrace Room · Couple', rating: 5 },
     { quote: 'Impeccable service from check-in to check-out. The rooftop pool at sunset is worth the trip on its own.', name: 'Marco T.', trip: 'Deluxe King Room · Leisure', rating: 5 },
     { quote: 'Our butler remembered everything — the children’s favourite breakfast, our car times, even the newspaper. Truly a higher standard.', name: 'The Okafor family', trip: 'Presidential Suite · Family', rating: 5 },
-    { quote: 'In-room dining arrived in twenty minutes, hot and beautifully plated. Better than most restaurants I have visited.', name: 'Sofia L.', trip: 'Deluxe King Room · Solo', rating: 4 }
+    { quote: 'Ordered the family handi biryani for four at midnight. Arrived sealed and steaming in thirty minutes. My kids still talk about it.', name: 'Sofia L.', trip: 'Deluxe King Room · Family', rating: 5 }
   ]
 };

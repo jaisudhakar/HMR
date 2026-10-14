@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HMR Hotels &amp; Resorts — Luxury Stays &amp; In-Room Dining</title>
-  <meta name="description" content="HMR Hotels &amp; Resorts — luxury rooms and suites, rooftop pool, spa and restaurant-quality in-room dining, served around the clock.">
+  <title>HMR Hotels &amp; Resorts — Home of the HMR Dum Biryani</title>
+  <meta name="description" content="HMR Hotels &amp; Resorts — home of the famous HMR dum biryani. Luxury rooms and suites, rooftop pool, spa and in-room dining around the clock.">
   <meta name="theme-color" content="#0c231c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/hero.webp">
+  <link rel="preload" as="image" href="assets/img/biryani/hero-handi.webp">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="is-loading">
@@ -49,8 +49,9 @@
       </a>
 
       <nav class="nav" aria-label="Primary">
+        <a class="nav__link is-active" href="#biryani">Biryani</a>
+        <a class="nav__link" href="#menu">In-Room Dining</a>
         <a class="nav__link" href="#rooms">Stay</a>
-        <a class="nav__link is-active" href="#menu">In-Room Dining</a>
         <a class="nav__link" href="#amenities">Experiences</a>
         <a class="nav__link" href="#gallery">Gallery</a>
         <a class="nav__link" href="#contact">Contact</a>
@@ -93,41 +94,55 @@
       <div class="hero__pillars" aria-hidden="true"></div>
 
       <div class="hero__content">
-        <p class="eyebrow" data-hero-in>In-Room Dining</p>
+        <p class="eyebrow" data-hero-in>The HMR Signature</p>
         <h1 class="hero__title" id="heroTitle">
-          <span class="line"><span data-hero-in>Dining, delivered</span></span>
+          <span class="line"><span data-hero-in>Our famous biryani,</span></span>
           <span class="line"><span data-hero-in>to your door.</span></span>
         </h1>
-        <p class="hero__lead" data-hero-in>Restaurant-quality meals, crafted for your comfort.<br>Exceptional flavours, wherever you are.</p>
+        <p class="hero__lead" data-hero-in>Aged basmati, saffron and tender meat, sealed in a copper handi and slow-cooked on dum. Opened at your door, still steaming.</p>
 
-        <div class="stat-card" data-hero-in>
-          <svg class="icon icon--lg stat-card__icon"><use href="#i-clock"/></svg>
-          <div>
-            <span class="stat-card__label">Average delivery</span>
-            <span class="stat-card__value"><span data-count-to="25">0</span> min</span>
+        <div class="hero__stats" data-hero-in>
+          <div class="stat-card">
+            <svg class="icon icon--lg stat-card__icon"><use href="#i-flame"/></svg>
+            <div>
+              <span class="stat-card__label">Slow-cooked on dum</span>
+              <span class="stat-card__value"><span data-count-to="4">0</span> hours</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <svg class="icon icon--lg stat-card__icon"><use href="#i-clock"/></svg>
+            <div>
+              <span class="stat-card__label">Average delivery</span>
+              <span class="stat-card__value"><span data-count-to="25">0</span> min</span>
+            </div>
           </div>
         </div>
 
         <div class="hero__ctas" data-hero-in>
-          <a class="btn btn--copper btn--lg" href="#menu">View menu <svg class="icon btn__arrow"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--copper btn--lg" href="#menu" data-cat-jump="biryani">Order biryani <svg class="icon btn__arrow"><use href="#i-arrow"/></svg></a>
           <button class="btn btn--ghost btn--lg" type="button" data-room-trigger>
             <svg class="icon"><use href="#i-bed"/></svg> Room <span data-room-label>1204</span>
           </button>
         </div>
 
-        <p class="hero__motto" data-hero-in><span></span>Great food makes a brighter stay</p>
+        <p class="hero__motto" data-hero-in><span></span>Sealed · Slow-cooked · Served</p>
       </div>
 
       <div class="hero__stage" data-parallax>
-        <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <img class="hero__plate" src="assets/img/hero.webp" alt="Wagyu striploin with seasonal vegetables and jus on a dark plate" width="936" height="582">
-        <button class="spin-btn hero__spin" type="button" data-spin aria-label="Turn the plate 360 degrees">
-          <span>360°</span>
+        <div class="handi" data-handi>
+          <div class="handi__glow" aria-hidden="true"></div>
+          <div class="steam handi__steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <img class="handi__body" src="assets/img/biryani/hero-handi.webp" alt="HMR signature chicken dum biryani in a copper handi" width="1350" height="1050">
+          <img class="handi__lid" src="assets/img/biryani/hero-lid.webp" alt="" width="1350" height="1050" aria-hidden="true">
+          <span class="handi__tag" aria-hidden="true"><b>Signature</b>Handi Biryani · $28</span>
+        </div>
+        <button class="spin-btn hero__spin" type="button" data-spin aria-label="Lift the lid of the handi" aria-pressed="false">
+          <span data-spin-label>Lift lid</span>
           <svg viewBox="0 0 40 14" aria-hidden="true"><path d="M3 4c3 5 31 5 34 0M33 9l4-5-6 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
 
-      <p class="hero__aside" aria-hidden="true">Exceptional<br>tastes<br>travel well</p>
+      <p class="hero__aside" aria-hidden="true">Sealed<br>slow-cooked<br>served</p>
 
       <a class="scroll-cue" href="#categories" aria-label="Scroll to categories"><span></span></a>
     </section>
@@ -177,6 +192,10 @@
 
     <!-- Category strip -->
     <section class="cats" id="categories" aria-label="Browse by service">
+      <a class="cat reveal" href="#menu" data-cat-jump="biryani">
+        <img src="assets/img/biryani/chicken-biryani.webp" alt="" width="900" height="600" loading="lazy" class="cat__img--wide">
+        <span>Biryani</span><svg class="icon icon--sm"><use href="#i-chevron-r"/></svg>
+      </a>
       <a class="cat reveal" href="#menu" data-cat-jump="breakfast">
         <img src="assets/img/croissant.webp" alt="" width="248" height="200" loading="lazy">
         <span>Breakfast</span><svg class="icon icon--sm"><use href="#i-chevron-r"/></svg>
@@ -184,10 +203,6 @@
       <a class="cat reveal" href="#menu" data-cat-jump="salads">
         <img src="assets/img/garden-bowl.webp" alt="" width="248" height="200" loading="lazy">
         <span>All-day</span><svg class="icon icon--sm"><use href="#i-chevron-r"/></svg>
-      </a>
-      <a class="cat reveal" href="#menu" data-cat-jump="mains">
-        <img src="assets/img/cat-dinner.webp" alt="" width="260" height="200" loading="lazy">
-        <span>Dinner</span><svg class="icon icon--sm"><use href="#i-chevron-r"/></svg>
       </a>
       <a class="cat reveal" href="#menu" data-cat-jump="desserts">
         <img src="assets/img/fondant.webp" alt="" width="602" height="314" loading="lazy" class="cat__img--wide">
@@ -202,16 +217,75 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Great food makes a brighter stay</span><i>✦</i>
+        <span>Home of the HMR dum biryani</span><i>✦</i>
         <span>Served 24 hours</span><i>✦</i>
         <span>Charged to your room</span><i>✦</i>
         <span>Exceptional tastes travel well</span><i>✦</i>
-        <span>Great food makes a brighter stay</span><i>✦</i>
+        <span>Sealed in copper, slow-cooked on dum</span><i>✦</i>
         <span>Served 24 hours</span><i>✦</i>
         <span>Charged to your room</span><i>✦</i>
         <span>Exceptional tastes travel well</span><i>✦</i>
       </div>
     </div>
+
+    <!-- The Art of Dum -->
+    <section class="dum" id="biryani" aria-labelledby="dumTitle">
+      <div class="dum__intro reveal">
+        <p class="eyebrow">Our signature</p>
+        <h2 class="section-title" id="dumTitle">The art <em>of dum.</em></h2>
+        <p>Biryani is the dish HMR is known for. Each handi takes a full day: marinated overnight, layered by hand, sealed with dough and slow-cooked over embers — the way it has been made in Hyderabad’s royal kitchens for centuries.</p>
+      </div>
+      <ol class="dum__steps" data-dum-steps>
+        <li class="reveal">
+          <span class="dum__num">01</span>
+          <svg class="dum__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 22h36c0 10-8 18-18 18S6 32 6 22Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 16c2-3 0-5 2-8M24 16c2-3 0-5 2-8M34 16c2-3 0-5 2-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Marinate</h3>
+          <p>Overnight in yoghurt, ginger, garlic, mint and our 21-spice garam masala.</p>
+          <span class="dum__time">12 hours</span>
+        </li>
+        <li class="reveal">
+          <span class="dum__num">02</span>
+          <svg class="dum__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16 24 8l16 8-16 8-16-8Zm0 8 16 8 16-8M8 32l16 8 16-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h3>Layer</h3>
+          <p>Aged basmati, saffron milk, ghee, crisp birista and fresh mint — by hand, in that order.</p>
+          <span class="dum__time">7 layers</span>
+        </li>
+        <li class="reveal">
+          <span class="dum__num">03</span>
+          <svg class="dum__icon" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="26" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="26" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="3 3" opacity=".6"/><path d="M8 24c2-8 10-12 16-12s14 4 16 12M24 12V8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Seal</h3>
+          <p>The copper handi is sealed with a ring of dough, locking in every drop of steam.</p>
+          <span class="dum__time">Dough-sealed</span>
+        </li>
+        <li class="reveal">
+          <span class="dum__num">04</span>
+          <svg class="dum__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42c-7 0-12-5-12-11 0-6 4-9 6-14 1 3 2 5 4 6 0-5 3-9 7-12-1 5 2 8 4 11 2 3 3 5 3 9 0 6-5 11-12 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h3>Dum</h3>
+          <p>Slow-cooked over embers for four hours, then carried to your room and opened in front of you.</p>
+          <span class="dum__time">4 hours</span>
+        </li>
+      </ol>
+      <div class="dum__cta reveal">
+        <div class="dum__offer" data-quick-card>
+          <img src="assets/img/biryani/signature-biryani.webp" alt="HMR Signature Handi Biryani" loading="lazy">
+          <div>
+            <b>HMR Signature Handi Biryani</b>
+            <span>For one or two · served with raita &amp; salan</span>
+          </div>
+          <span class="dum__price">$28</span>
+          <button class="btn btn--copper" type="button" data-quick-add="signature">Add to order <svg class="icon"><use href="#i-plus"/></svg></button>
+        </div>
+        <div class="dum__offer" data-quick-card>
+          <img src="assets/img/biryani/mutton-biryani.webp" alt="Family Handi Biryani" loading="lazy">
+          <div>
+            <b>Family Handi Biryani</b>
+            <span>Serves four · with raita, salan &amp; dessert</span>
+          </div>
+          <span class="dum__price">$89</span>
+          <button class="btn btn--ghost" type="button" data-quick-add="family-handi">Add to order <svg class="icon"><use href="#i-plus"/></svg></button>
+        </div>
+      </div>
+    </section>
 
     <!-- Menu -->
     <section class="menu" id="menu" aria-labelledby="menuTitle">
@@ -253,6 +327,7 @@
         <p class="menu__note">
           <span class="diet diet--v">V</span> Vegetarian
           <span class="diet diet--gf">GF</span> Gluten-free
+          <span class="diet diet--hot">Spicy</span> Spicy
           <span class="menu__note-sep"></span>
           Please tell us about any allergies when ordering. Prices include taxes and service.
         </p>
@@ -263,7 +338,7 @@
           <div class="feature__head">
             <div>
               <p class="eyebrow">Featured dish</p>
-              <h3 class="feature__title" data-f-title>Wagyu Striploin</h3>
+              <h3 class="feature__title" data-f-title>HMR Signature Handi Biryani</h3>
               <span class="feature__rule"></span>
               <p class="feature__desc" data-f-desc></p>
             </div>
@@ -277,13 +352,13 @@
           <div class="feature__stage" data-f-stage>
             <div class="feature__pedestal" aria-hidden="true"></div>
             <div class="feature__steam steam" aria-hidden="true"><i></i><i></i><i></i></div>
-            <img class="feature__img" data-f-img src="assets/img/featured.webp" alt="" draggable="false">
+            <img class="feature__img" data-f-img src="assets/img/biryani/signature-biryani.webp" alt="" draggable="false">
           </div>
 
           <div class="feature__bar">
             <div>
-              <span class="feature__price" data-f-price>$62</span>
-              <span class="feature__time"><svg class="icon icon--sm"><use href="#i-clock"/></svg><span data-f-time>25 min</span></span>
+              <span class="feature__price" data-f-price>$28</span>
+              <span class="feature__time"><svg class="icon icon--sm"><use href="#i-clock"/></svg><span data-f-time>30 min</span></span>
             </div>
             <button class="btn btn--copper" type="button" data-f-add>Add to order <svg class="icon"><use href="#i-plus"/></svg></button>
           </div>
@@ -321,13 +396,13 @@
       </div>
       <div class="bento">
         <article class="tile tile--dining reveal">
-          <img src="assets/img/featured.webp" alt="Wagyu striploin served at Ember restaurant" loading="lazy">
+          <img src="assets/img/biryani/signature-biryani.webp" alt="HMR signature biryani in a copper handi at Ember" loading="lazy">
           <div class="tile__body">
-            <span class="tile__tag">Restaurant · Level 1</span>
+            <span class="tile__tag">Restaurant · Level 1 · Home of the HMR biryani</span>
             <h3>Ember</h3>
-            <p>Wood-fired grill and a 180-bin cellar. The same kitchen that cooks your in-room dining.</p>
+            <p>Our biryani handis are sealed with dough and slow-cooked over embers for four hours — the same kitchen that cooks your in-room dining.</p>
             <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>Daily 6:30 – 23:30</span>
-            <a class="tile__link" href="#menu">See the menu <svg class="icon icon--sm"><use href="#i-arrow"/></svg></a>
+            <a class="tile__link" href="#menu" data-cat-jump="biryani">See the biryani menu <svg class="icon icon--sm"><use href="#i-arrow"/></svg></a>
           </div>
         </article>
         <article class="tile tile--pool reveal">
@@ -391,7 +466,7 @@
       <div class="hotel__copy reveal">
         <p class="eyebrow">About HMR</p>
         <h2 class="section-title" id="hotelTitle">A higher standard,<br><em>delivered quietly.</em></h2>
-        <p>Our kitchen never closes. Every plate is cooked to order by the same brigade that runs our signature restaurant, then carried to your door under cloche — hot, unhurried, and exactly as the chef intended.</p>
+        <p>Our kitchen never closes. Every handi of biryani is layered by hand, sealed with dough and slow-cooked on dum by the same brigade that runs Ember — then carried to your door and opened in front of you, still steaming.</p>
       </div>
       <ul class="stats">
         <li class="reveal"><span class="stats__num"><span data-count-to="24">0</span>/7</span><span class="stats__label">Kitchen hours</span></li>
@@ -558,8 +633,9 @@
 
   <!-- Mobile nav -->
   <div class="mnav" data-mnav>
-    <a href="#rooms">Stay</a>
+    <a href="#biryani">Biryani</a>
     <a href="#menu">In-Room Dining</a>
+    <a href="#rooms">Stay</a>
     <a href="#amenities">Experiences</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
@@ -748,6 +824,7 @@
     <symbol id="i-bag" viewBox="0 0 24 24"><path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 10V8.5m-2 0h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.4 2.4-5.3 3.6-8.4.4 1.9 1.4 3 2.6 3.6C12 7 13.4 4.6 15.8 3c-.4 3 .9 4.7 1.9 6.3.8 1.3 1.3 2.5 1.3 4.2C19 17.9 16.1 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 21c-1.7 0-2.8-1.1-2.8-2.7 0-1.8 1.6-2.6 2.2-4.3 1.6 1 3.4 2.4 3.4 4.3 0 1.6-1.1 2.7-2.8 2.7Z" fill="currentColor" opacity=".35"/></symbol>
     <symbol id="i-chevron-l" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>

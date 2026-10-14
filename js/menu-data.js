@@ -3,6 +3,7 @@
 window.HMR_MENU = {
   categories: [
     { id: 'all', label: 'All' },
+    { id: 'biryani', label: 'Biryani' },
     { id: 'breakfast', label: 'Breakfast' },
     { id: 'mains', label: 'Mains' },
     { id: 'salads', label: 'Salads' },
@@ -13,6 +14,72 @@ window.HMR_MENU = {
   ],
 
   dishes: [
+    // Biryani — the house speciality
+    {
+      id: 'signature', cat: 'biryani', name: 'HMR Signature Handi Biryani', price: 28, time: 30,
+      short: 'Chicken, saffron, sealed copper handi',
+      desc: 'Our most-loved dish: chicken marinated overnight, layered with aged basmati and saffron, sealed in a copper handi and slow-cooked on dum. Opened at your door.',
+      img: 'assets/img/biryani/signature-biryani.webp',
+      diet: ['gf', 'hot'], pair: 'Served with burani raita and mirchi ka salan.',
+      tags: 'biryani chicken handi dum signature rice hyderabadi indian spicy', signature: true
+    },
+    {
+      id: 'mutton-biryani', cat: 'biryani', name: 'Hyderabadi Mutton Biryani', price: 32, time: 35,
+      short: 'Kacchi-style, tender lamb on the bone',
+      desc: 'Raw-marinated lamb and basmati cooked together on dum in the kacchi style, finished with ghee, mint and crisp birista.',
+      img: 'assets/img/biryani/mutton-biryani.webp',
+      diet: ['gf', 'hot'], pair: 'Best with mirchi ka salan.',
+      tags: 'biryani mutton lamb goat kacchi hyderabadi dum rice indian spicy'
+    },
+    {
+      id: 'chicken-biryani', cat: 'biryani', name: 'Chicken Dum Biryani', price: 24, time: 25,
+      short: 'Classic, on the plate',
+      desc: 'The classic: spiced chicken, long-grain basmati, saffron and fried onions, cooked on dum and served on the plate.',
+      img: 'assets/img/biryani/chicken-biryani.webp',
+      diet: ['gf'], pair: 'Add burani raita +$5.',
+      tags: 'biryani chicken dum rice indian'
+    },
+    {
+      id: 'prawn-biryani', cat: 'biryani', name: 'Jhinga (Prawn) Biryani', price: 30, time: 25,
+      short: 'Tiger prawns, coastal spices',
+      desc: 'Tiger prawns in a coconut-kissed coastal masala, layered with saffron rice and curry leaves.',
+      img: 'assets/img/biryani/prawn-biryani.webp',
+      diet: ['gf', 'hot'], pair: 'Pairs with a chilled glass of Riesling.',
+      tags: 'biryani prawn shrimp jhinga seafood rice indian spicy'
+    },
+    {
+      id: 'egg-biryani', cat: 'biryani', name: 'Anda (Egg) Biryani', price: 18, time: 20,
+      short: 'Masala eggs, saffron rice',
+      desc: 'Boiled eggs tossed in a roasted masala and layered through fragrant saffron basmati.',
+      img: 'assets/img/biryani/egg-biryani.webp',
+      diet: ['v', 'gf'], pair: 'Add burani raita +$5.',
+      tags: 'biryani egg anda vegetarian rice indian'
+    },
+    {
+      id: 'paneer-biryani', cat: 'biryani', name: 'Paneer Tikka Biryani', price: 20, time: 25,
+      short: 'Char-grilled paneer, mint',
+      desc: 'Tandoor-charred paneer tikka layered with mint, saffron and aged basmati.',
+      img: 'assets/img/biryani/paneer-biryani.webp',
+      diet: ['v', 'gf'], pair: 'Best with mirchi ka salan.',
+      tags: 'biryani paneer vegetarian tikka rice indian'
+    },
+    {
+      id: 'veg-biryani', cat: 'biryani', name: 'Subz Dum Biryani', price: 18, time: 25,
+      short: 'Garden vegetables, whole spices',
+      desc: 'Seasonal vegetables, whole spices and saffron rice slow-cooked together on dum.',
+      img: 'assets/img/biryani/veg-biryani.webp',
+      diet: ['v', 'gf'], pair: 'Add burani raita +$5.',
+      tags: 'biryani vegetable veg subz vegetarian vegan rice indian'
+    },
+    {
+      id: 'family-handi', cat: 'biryani', name: 'Family Handi Biryani', price: 89, time: 40,
+      short: 'Serves 4 · chicken or mutton',
+      desc: 'A grand copper handi for four, opened at your table. Comes with raita, salan and double ka meetha. Tell us chicken or mutton in your kitchen notes.',
+      img: 'assets/img/biryani/signature-biryani.webp',
+      diet: ['gf', 'hot'], pair: 'Includes raita, salan and dessert for four.',
+      tags: 'biryani family sharing handi group chicken mutton rice indian'
+    },
+
     // Mains
     {
       id: 'wagyu', cat: 'mains', name: 'Wagyu Striploin', price: 62, time: 25,
@@ -124,6 +191,20 @@ window.HMR_MENU = {
 
     // Sides
     {
+      id: 'raita', cat: 'sides', name: 'Burani Raita', price: 5, time: 5,
+      short: 'Smoked garlic yoghurt, cucumber',
+      desc: 'Cool yoghurt with smoked garlic, cucumber, mint and a dusting of chilli — the perfect partner for biryani.',
+      img: 'assets/img/biryani/raita.webp',
+      diet: ['v', 'gf'], pair: '', tags: 'raita yoghurt side biryani indian'
+    },
+    {
+      id: 'salan', cat: 'sides', name: 'Mirchi ka Salan', price: 7, time: 8,
+      short: 'Green chillies, peanut-sesame gravy',
+      desc: 'The Hyderabadi classic: green chillies simmered in a tangy peanut, sesame and tamarind gravy.',
+      img: 'assets/img/biryani/salan.webp',
+      diet: ['v', 'gf', 'hot'], pair: '', tags: 'salan mirchi chilli gravy side biryani hyderabadi indian spicy'
+    },
+    {
       id: 'fries', cat: 'sides', name: 'Truffle Fries', price: 9, time: 8,
       short: 'Parmesan, chives',
       desc: 'Hand-cut fries tossed in truffle oil, parmesan and chives.',
@@ -143,6 +224,14 @@ window.HMR_MENU = {
     },
 
     // Desserts
+    {
+      id: 'meetha', cat: 'desserts', name: 'Double ka Meetha', price: 9, time: 10,
+      short: 'Saffron bread pudding, nuts',
+      desc: 'Fried bread soaked in saffron-cardamom milk and finished with almonds and pistachios.',
+      img: 'assets/img/biryani/double-ka-meetha.webp',
+      diet: ['v'], pair: 'A sweet finish to any biryani.',
+      tags: 'dessert sweet hyderabadi indian saffron bread pudding'
+    },
     {
       id: 'fondant', cat: 'desserts', name: 'Dark Chocolate Fondant', price: 16, time: 18,
       short: 'Raspberry, vanilla ice cream',

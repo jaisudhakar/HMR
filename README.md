@@ -1,6 +1,6 @@
 # HMR Hotels & Resorts
 
-An animated hotel website for **HMR Hotels & Resorts**, built around its in-room dining menu. It is a static site built with plain HTML, CSS and JavaScript, so there is no build step.
+An animated hotel website for **HMR Hotels & Resorts**, home of the HMR dum biryani, with a full in-room dining menu. It is a static site built with plain HTML, CSS and JavaScript, so there is no build step.
 
 ## Run it
 
@@ -15,8 +15,9 @@ python3 -m http.server 8000
 
 | Section | Highlights |
 | --- | --- |
-| **Hero**, "Dining, delivered to your door." | Branded preloader, headline that rises in line by line, floating plate with steam, drifting gold dust, mouse parallax, a 360° turn button and a counting delivery stat |
-| **Category strip** | Breakfast, All-day, Dinner, Desserts, Wine & Bar. Each one jumps to the menu with that filter applied |
+| **Hero**, "Our famous biryani, to your door." | Branded preloader, a copper handi whose dough-sealed lid lifts with rising steam (and a **Lift lid / Close lid** button), drifting gold dust, mouse parallax and counting stats |
+| **The art of dum** | The four steps of making the biryani (marinate, layer, seal, dum) on a timeline that draws itself, plus one-click **Add to order** for the Signature and Family handis |
+| **Category strip** | Biryani, Breakfast, All-day, Desserts, Wine & Bar. Each one jumps to the menu with that filter applied |
 | **Our Menu** | Live search (press `/`), category chips with a sliding active pill, a list/grid toggle and staggered card animations |
 | **Featured dish panel** | Hover or click a dish to preview it on a copper pedestal. Drag to tilt it in 3D, swipe further to go to the next dish, or pick from the thumbnails |
 | **Dish detail sheet** | Photo, description, dietary badges, wine pairing, a quantity stepper and an add button |
@@ -37,6 +38,7 @@ The site also remembers the guest's room number, cart and preferred layout in `l
 
 ## Placeholder content to replace
 
+- **Biryani images** in `assets/img/biryani/` are illustrations, not photos. Replace them with photos of your own biryani using the same file names (any size works; 900×600 suits the menu). The opening screen uses two layered images: `hero-handi.webp` (pot and biryani) and `hero-lid.webp` (lid only, transparent background).
 - **Hotel images** in `assets/img/hotel/` are illustrations, not photos. Put real photos in `assets/img/hotel/` and update the `img` paths in `js/hotel-data.js` and the `<img>` tags in the Experiences section of `index.html`.
 - **Contact details**: the phone number, email addresses and the address "1 Harbour Boulevard, City Centre" are made up. The map is an illustration, and **Get directions** searches Google Maps for "HMR Hotels & Resorts".
 - **Numbers**: the room count, prices, review scores, review count, reviews and awards are sample content.
@@ -44,7 +46,7 @@ The site also remembers the guest's room number, cart and preferred layout in `l
 
 ## Editing the menu
 
-Every dish lives in `js/menu-data.js`. Each one has a name, category, price, preparation time, description, dietary tags, an optional pairing and an optional photo. A dish without a photo shows an HMR monogram plate instead.
+Every dish lives in `js/menu-data.js`. The Biryani category comes first, and `signature` is the dish shown in the featured panel on load. Each one has a name, category, price, preparation time, description, dietary tags, an optional pairing and an optional photo. A dish without a photo shows an HMR monogram plate instead.
 
 ```
 index.html
