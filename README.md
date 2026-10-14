@@ -1,4 +1,4 @@
-# HMR Hotels & Resorts — In-Room Dining
+# HMR Hotels & Resorts
 
 An animated hotel website for **HMR Hotels & Resorts**, built around its in-room dining menu. It is a static site built with plain HTML, CSS and JavaScript, so there is no build step.
 
