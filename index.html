@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HMR Hotels &amp; Resorts — In-Room Dining</title>
-  <meta name="description" content="Restaurant-quality meals, crafted for your comfort and delivered to your room. HMR Hotels & Resorts in-room dining menu.">
+  <title>HMR Hotels &amp; Resorts — Luxury Stays &amp; In-Room Dining</title>
+  <meta name="description" content="HMR Hotels &amp; Resorts — luxury rooms and suites, rooftop pool, spa and restaurant-quality in-room dining, served around the clock.">
   <meta name="theme-color" content="#0c231c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,19 @@
 
   <!-- Header -->
   <header class="header" id="top">
+    <div class="topbar">
+      <div class="topbar__inner">
+        <div class="topbar__contact">
+          <a href="tel:+10000000000"><svg class="icon icon--sm"><use href="#i-phone"/></svg>+1 (000) 000-0000</a>
+          <a href="mailto:reservations@hmrhotels.com"><svg class="icon icon--sm"><use href="#i-mail"/></svg>reservations@hmrhotels.com</a>
+        </div>
+        <p class="topbar__offer"><span class="topbar__dot"></span>Book direct — complimentary breakfast &amp; late check-out on every stay</p>
+        <div class="topbar__meta">
+          <span>EN · USD</span>
+          <a href="#book">HMR Rewards</a>
+        </div>
+      </div>
+    </div>
     <div class="header__inner">
       <a class="brand" href="#top" aria-label="HMR Hotels &amp; Resorts — home">
         <span class="brand__logo">
@@ -36,8 +49,10 @@
       </a>
 
       <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#rooms">Stay</a>
         <a class="nav__link is-active" href="#menu">In-Room Dining</a>
-        <a class="nav__link" href="#hotel">Our Hotel</a>
+        <a class="nav__link" href="#amenities">Experiences</a>
+        <a class="nav__link" href="#gallery">Gallery</a>
         <a class="nav__link" href="#contact">Contact</a>
       </nav>
 
@@ -62,6 +77,7 @@
           <svg class="icon"><use href="#i-bag"/></svg>
           <span class="cart-btn__count" data-cart-count>0</span>
         </button>
+        <a class="btn btn--copper btn--sm header__book" href="#book" data-book-open>Book a stay</a>
         <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" data-burger>
           <span></span><span></span>
         </button>
@@ -114,6 +130,49 @@
       <p class="hero__aside" aria-hidden="true">Exceptional<br>tastes<br>travel well</p>
 
       <a class="scroll-cue" href="#categories" aria-label="Scroll to categories"><span></span></a>
+    </section>
+
+    <!-- Booking bar -->
+    <section class="booking" id="book" aria-label="Book your stay">
+      <form class="booking__bar reveal" data-booking-form autocomplete="off">
+        <div class="booking__brand">
+          <p class="eyebrow">Reserve</p>
+          <p class="booking__title">Your stay at HMR</p>
+        </div>
+        <label class="bfield">
+          <span class="bfield__label"><svg class="icon icon--sm"><use href="#i-calendar"/></svg>Check-in</span>
+          <input type="date" name="checkin" required data-checkin>
+        </label>
+        <label class="bfield">
+          <span class="bfield__label"><svg class="icon icon--sm"><use href="#i-calendar"/></svg>Check-out</span>
+          <input type="date" name="checkout" required data-checkout>
+        </label>
+        <div class="bfield bfield--guests" data-guests>
+          <span class="bfield__label"><svg class="icon icon--sm"><use href="#i-user"/></svg>Guests</span>
+          <button type="button" class="bfield__value" aria-haspopup="true" aria-expanded="false" data-guests-btn><span data-guests-label>2 adults</span><svg class="icon icon--sm"><use href="#i-chevron"/></svg></button>
+          <div class="guests-pop" data-guests-pop>
+            <div class="guests-pop__row"><div><b>Adults</b><small>Ages 13+</small></div>
+              <div class="stepper stepper--sm"><button type="button" data-g="adults" data-d="-1" aria-label="Fewer adults"><svg class="icon"><use href="#i-minus"/></svg></button><span data-g-val="adults">2</span><button type="button" data-g="adults" data-d="1" aria-label="More adults"><svg class="icon"><use href="#i-plus"/></svg></button></div></div>
+            <div class="guests-pop__row"><div><b>Children</b><small>Ages 0–12</small></div>
+              <div class="stepper stepper--sm"><button type="button" data-g="children" data-d="-1" aria-label="Fewer children"><svg class="icon"><use href="#i-minus"/></svg></button><span data-g-val="children">0</span><button type="button" data-g="children" data-d="1" aria-label="More children"><svg class="icon"><use href="#i-plus"/></svg></button></div></div>
+            <div class="guests-pop__row"><div><b>Rooms</b><small>Up to 4 per booking</small></div>
+              <div class="stepper stepper--sm"><button type="button" data-g="rooms" data-d="-1" aria-label="Fewer rooms"><svg class="icon"><use href="#i-minus"/></svg></button><span data-g-val="rooms">1</span><button type="button" data-g="rooms" data-d="1" aria-label="More rooms"><svg class="icon"><use href="#i-plus"/></svg></button></div></div>
+          </div>
+        </div>
+        <label class="bfield">
+          <span class="bfield__label"><svg class="icon icon--sm"><use href="#i-key"/></svg>Room type</span>
+          <select name="room" data-room-type>
+            <option value="">Any room</option>
+          </select>
+        </label>
+        <button class="btn btn--copper booking__submit" type="submit">Check availability <svg class="icon btn__arrow"><use href="#i-arrow"/></svg></button>
+      </form>
+      <ul class="perks reveal">
+        <li><svg class="icon icon--sm"><use href="#i-check"/></svg>Best rate guaranteed</li>
+        <li><svg class="icon icon--sm"><use href="#i-check"/></svg>Free cancellation up to 48 h</li>
+        <li><svg class="icon icon--sm"><use href="#i-check"/></svg>Breakfast for two included</li>
+        <li><svg class="icon icon--sm"><use href="#i-check"/></svg>No payment until arrival</li>
+      </ul>
     </section>
 
     <!-- Category strip -->
@@ -234,10 +293,103 @@
       </aside>
     </section>
 
+    <!-- Rooms & Suites -->
+    <section class="rooms" id="rooms" aria-labelledby="roomsTitle">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Stay</p>
+          <h2 class="section-title" id="roomsTitle">Rooms &amp; Suites</h2>
+        </div>
+        <p class="section-head__lead">286 rooms and 34 suites, each finished in velvet, walnut and hand-brushed copper — and every one with in-room dining around the clock.</p>
+        <div class="rooms__nav">
+          <button class="round-btn" type="button" data-rooms-prev aria-label="Previous rooms"><svg class="icon"><use href="#i-chevron-l"/></svg></button>
+          <button class="round-btn" type="button" data-rooms-next aria-label="Next rooms"><svg class="icon"><use href="#i-chevron-r"/></svg></button>
+        </div>
+      </div>
+      <div class="rooms__track" data-rooms></div>
+      <div class="rooms__progress" aria-hidden="true"><span data-rooms-progress></span></div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="amenities" id="amenities" aria-labelledby="amenTitle">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Experiences</p>
+          <h2 class="section-title" id="amenTitle">Beyond <em>the room.</em></h2>
+        </div>
+        <p class="section-head__lead">A rooftop pool above the skyline, a spa built around warm stone and water, and a restaurant that sends its kitchen to your door.</p>
+      </div>
+      <div class="bento">
+        <article class="tile tile--dining reveal">
+          <img src="assets/img/featured.webp" alt="Wagyu striploin served at Ember restaurant" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Restaurant · Level 1</span>
+            <h3>Ember</h3>
+            <p>Wood-fired grill and a 180-bin cellar. The same kitchen that cooks your in-room dining.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>Daily 6:30 – 23:30</span>
+            <a class="tile__link" href="#menu">See the menu <svg class="icon icon--sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="tile tile--pool reveal">
+          <img src="assets/img/hotel/pool.svg" alt="Rooftop infinity pool at dusk" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Rooftop · Level 32</span>
+            <h3>Infinity Pool</h3>
+            <p>Heated year-round, with cabanas and sunset service.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>7:00 – 22:00</span>
+          </div>
+        </article>
+        <article class="tile tile--spa reveal">
+          <img src="assets/img/hotel/spa.svg" alt="Candlelit spa with warm stones" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Wellness</span>
+            <h3>The Copper Spa</h3>
+            <p>Six treatment rooms, hammam and thermal pool.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>9:00 – 21:00</span>
+          </div>
+        </article>
+        <article class="tile tile--bar reveal">
+          <img src="assets/img/wine.webp" alt="A glass of red wine at the Copper Bar" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Bar · Lobby level</span>
+            <h3>Copper Bar</h3>
+            <p>Rare wines by the glass and a live pianist nightly.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>16:00 – 1:00</span>
+          </div>
+        </article>
+        <article class="tile tile--gym reveal">
+          <img src="assets/img/hotel/fitness.svg" alt="Fitness studio with city views" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Wellness</span>
+            <h3>Fitness Studio</h3>
+            <p>Open around the clock, with personal trainers on request.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>24 hours</span>
+          </div>
+        </article>
+        <article class="tile tile--lobby reveal">
+          <img src="assets/img/hotel/lobby.svg" alt="The grand lobby with chandelier" loading="lazy">
+          <div class="tile__body">
+            <span class="tile__tag">Concierge</span>
+            <h3>Les Clefs Concierge</h3>
+            <p>Theatre tickets, private cars, tables that are “fully booked”.</p>
+            <span class="tile__hours"><svg class="icon icon--sm"><use href="#i-clock"/></svg>24 hours · extension 7</span>
+          </div>
+        </article>
+      </div>
+      <ul class="services reveal">
+        <li><svg class="icon"><use href="#i-wifi"/></svg>High-speed Wi-Fi</li>
+        <li><svg class="icon"><use href="#i-car"/></svg>Valet &amp; airport transfers</li>
+        <li><svg class="icon"><use href="#i-bell"/></svg>24-hour room service</li>
+        <li><svg class="icon"><use href="#i-paw"/></svg>Pet friendly</li>
+        <li><svg class="icon"><use href="#i-briefcase"/></svg>Meeting &amp; event rooms</li>
+        <li><svg class="icon"><use href="#i-access"/></svg>Accessible rooms</li>
+      </ul>
+    </section>
+
     <!-- Hotel -->
     <section class="hotel" id="hotel" aria-labelledby="hotelTitle">
       <div class="hotel__copy reveal">
-        <p class="eyebrow">Our Hotel</p>
+        <p class="eyebrow">About HMR</p>
         <h2 class="section-title" id="hotelTitle">A higher standard,<br><em>delivered quietly.</em></h2>
         <p>Our kitchen never closes. Every plate is cooked to order by the same brigade that runs our signature restaurant, then carried to your door under cloche — hot, unhurried, and exactly as the chef intended.</p>
       </div>
@@ -247,10 +399,121 @@
         <li class="reveal"><span class="stats__num"><span data-count-to="4.9" data-decimals="1">0</span><small>★</small></span><span class="stats__label">Guest rating</span></li>
         <li class="reveal"><span class="stats__num"><span data-count-to="180">0</span>+</span><span class="stats__label">Wines in cellar</span></li>
       </ul>
+      <ul class="awards">
+        <li class="reveal"><span class="laurel">★★★★★</span><b>Five-Star Rated</b><small>Hotel of distinction</small></li>
+        <li class="reveal"><span class="laurel">2026</span><b>Best Urban Retreat</b><small>Luxury Travel Awards</small></li>
+        <li class="reveal"><span class="laurel">Top 50</span><b>Hotel Dining</b><small>Ember restaurant</small></li>
+        <li class="reveal"><span class="laurel">9.6</span><b>Guest Favourite</b><small>Verified stays</small></li>
+      </ul>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery" aria-labelledby="galleryTitle">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2 class="section-title" id="galleryTitle">Inside HMR</h2>
+        </div>
+        <div class="gallery__filters" role="tablist" aria-label="Filter gallery" data-gallery-filters>
+          <button class="gchip is-active" type="button" data-gf="all">All</button>
+          <button class="gchip" type="button" data-gf="rooms">Rooms</button>
+          <button class="gchip" type="button" data-gf="dining">Dining</button>
+          <button class="gchip" type="button" data-gf="wellness">Wellness</button>
+          <button class="gchip" type="button" data-gf="hotel">Hotel</button>
+        </div>
+      </div>
+      <div class="masonry" data-gallery></div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="reviews__summary reveal">
+        <p class="eyebrow">Guest reviews</p>
+        <h2 class="section-title" id="reviewsTitle"><span data-count-to="4.9" data-decimals="1">0</span><small>/5</small></h2>
+        <div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div>
+        <p class="reviews__count">Based on 2,148 verified guest reviews</p>
+        <ul class="bars">
+          <li><span>Service</span><i style="--v:.99"></i><b>5.0</b></li>
+          <li><span>Cleanliness</span><i style="--v:.98"></i><b>4.9</b></li>
+          <li><span>Dining</span><i style="--v:.98"></i><b>4.9</b></li>
+          <li><span>Location</span><i style="--v:.96"></i><b>4.8</b></li>
+          <li><span>Value</span><i style="--v:.92"></i><b>4.6</b></li>
+        </ul>
+      </div>
+      <div class="quotes reveal" data-quotes>
+        <svg class="quotes__mark" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V21C0 9 6 2 18 0l2 5c-7 2-10 6-10 12h9v19H0Zm28 0V21C28 9 34 2 46 0l2 5c-7 2-10 6-10 12h9v19H28Z" fill="currentColor"/></svg>
+        <div class="quotes__stage" data-quotes-stage aria-live="polite"></div>
+        <div class="quotes__controls">
+          <div class="quotes__dots" data-quotes-dots></div>
+          <div class="quotes__arrows">
+            <button class="round-btn" type="button" data-q-prev aria-label="Previous review"><svg class="icon"><use href="#i-chevron-l"/></svg></button>
+            <button class="round-btn" type="button" data-q-next aria-label="Next review"><svg class="icon"><use href="#i-chevron-r"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location" id="location" aria-labelledby="locTitle">
+      <div class="location__info reveal">
+        <p class="eyebrow">Location</p>
+        <h2 class="section-title" id="locTitle">In the heart <em>of the city.</em></h2>
+        <address class="location__address">HMR Hotels &amp; Resorts<br>1 Harbour Boulevard, City Centre</address>
+        <ul class="distances">
+          <li><svg class="icon icon--sm"><use href="#i-plane"/></svg><span>International airport</span><b>25 min</b></li>
+          <li><svg class="icon icon--sm"><use href="#i-train"/></svg><span>Central station</span><b>8 min</b></li>
+          <li><svg class="icon icon--sm"><use href="#i-pin"/></svg><span>Old town &amp; museums</span><b>5 min walk</b></li>
+          <li><svg class="icon icon--sm"><use href="#i-bag2"/></svg><span>Harbour shopping district</span><b>3 min walk</b></li>
+        </ul>
+        <div class="location__actions">
+          <a class="btn btn--copper" href="https://www.google.com/maps/search/?api=1&amp;query=HMR+Hotels+%26+Resorts" target="_blank" rel="noopener">Get directions <svg class="icon btn__arrow"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="tel:+10000000000"><svg class="icon"><use href="#i-phone"/></svg>Call the hotel</a>
+        </div>
+      </div>
+      <div class="map reveal" aria-hidden="true">
+        <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="460" fill="#0d251e"/>
+          <path d="M-20 360 C 120 300 200 420 330 360 S 520 260 640 300 L640 480 L-20 480 Z" fill="#123a3a"/>
+          <path d="M-20 360 C 120 300 200 420 330 360 S 520 260 640 300" fill="none" stroke="#2f6a68" stroke-width="2"/>
+          <g stroke="#1d4236" stroke-width="10" fill="none" stroke-linecap="round">
+            <path d="M40 40 L560 120"/><path d="M20 200 L580 230"/><path d="M120 0 L180 330"/><path d="M330 0 L300 350"/><path d="M480 20 L520 290"/><path d="M0 120 L260 90"/>
+          </g>
+          <g stroke="#173a2f" stroke-width="4" fill="none">
+            <path d="M60 280 L560 170"/><path d="M240 20 L250 340"/><path d="M400 10 L420 320"/><path d="M80 100 L140 320"/>
+          </g>
+          <g fill="#163428">
+            <rect x="190" y="110" width="40" height="30" rx="3"/><rect x="350" y="140" width="50" height="40" rx="3"/><rect x="430" y="60" width="36" height="40" rx="3"/><rect x="60" y="210" width="44" height="30" rx="3"/><rect x="340" y="240" width="40" height="34" rx="3"/>
+          </g>
+          <circle cx="150" cy="70" r="26" fill="#1c4a36"/><text x="150" y="112" text-anchor="middle" font-size="11" fill="#9fb0a7" font-family="Manrope, sans-serif">Old Town</text>
+          <text x="470" y="360" text-anchor="middle" font-size="11" fill="#6aa09a" font-family="Manrope, sans-serif" letter-spacing="3">HARBOUR</text>
+          <text x="530" y="200" text-anchor="middle" font-size="11" fill="#9fb0a7" font-family="Manrope, sans-serif">Station</text>
+          <g class="map__pin" transform="translate(315 205)">
+            <circle r="44" fill="#c57a44" opacity=".15" class="map__pulse"/>
+            <circle r="24" fill="#c57a44" opacity=".25" class="map__pulse map__pulse--2"/>
+            <path d="M0 6 C -14 -10 -16 -16 -16 -24 a16 16 0 0 1 32 0 c0 8 -2 14 -16 30Z" fill="#d98d55" transform="translate(0 -6)"/>
+            <circle cy="-30" r="6" fill="#0d251e"/>
+          </g>
+          <g transform="translate(345 150)">
+            <rect width="120" height="34" rx="8" fill="#0c231c" stroke="#c57a44" stroke-opacity=".6"/>
+            <text x="60" y="22" text-anchor="middle" font-size="14" fill="#efe6d6" font-family="Cormorant Garamond, serif" letter-spacing="2">HMR Hotel</text>
+          </g>
+        </svg>
+      </div>
     </section>
   </main>
 
   <footer class="footer" id="contact">
+    <div class="newsletter reveal">
+      <div>
+        <p class="eyebrow">HMR Rewards</p>
+        <h2 class="newsletter__title">Members save up to 15% and stay longer.</h2>
+      </div>
+      <form class="newsletter__form" data-newsletter>
+        <label class="sr-only" for="nlEmail">Email address</label>
+        <input id="nlEmail" type="email" placeholder="Your email address" required>
+        <button class="btn btn--copper" type="submit">Join for free</button>
+      </form>
+    </div>
     <div class="footer__grid">
       <div class="reveal">
         <span class="brand__logo brand__logo--lg">
@@ -258,6 +521,20 @@
           <span class="brand__sub">Hotels &amp; Resorts</span>
         </span>
         <p class="footer__tag">A higher standard stays with you.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3>Stay</h3>
+        <ul class="footer__links">
+          <li><a href="#rooms">Rooms &amp; Suites</a></li>
+          <li><a href="#book">Offers &amp; packages</a></li>
+          <li><a href="#amenities">Spa &amp; wellness</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
       </div>
       <div class="reveal">
         <h3>In-Room Dining</h3>
@@ -265,17 +542,28 @@
       </div>
       <div class="reveal">
         <h3>Contact</h3>
-        <p>Front desk — extension 9<br>Concierge — extension 7<br><a href="mailto:dining@hmrhotels.com">dining@hmrhotels.com</a></p>
+        <p>1 Harbour Boulevard, City Centre<br><a href="tel:+10000000000">+1 (000) 000-0000</a><br><a href="mailto:reservations@hmrhotels.com">reservations@hmrhotels.com</a><br>Check-in 15:00 · Check-out 12:00</p>
       </div>
     </div>
-    <p class="footer__copy">© <span data-year></span> HMR Hotels &amp; Resorts. All rights reserved.</p>
+    <div class="footer__bottom">
+      <p>© <span data-year></span> HMR Hotels &amp; Resorts. All rights reserved.</p>
+      <ul class="footer__legal">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
   </footer>
 
   <!-- Mobile nav -->
   <div class="mnav" data-mnav>
+    <a href="#rooms">Stay</a>
     <a href="#menu">In-Room Dining</a>
-    <a href="#hotel">Our Hotel</a>
+    <a href="#amenities">Experiences</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
+    <a class="btn btn--copper btn--lg mnav__book" href="#book" data-book-open>Book a stay</a>
   </div>
 
   <!-- Floating cart bar (mobile) -->
@@ -387,6 +675,62 @@
     </div>
   </div>
 
+  <!-- Booking modal -->
+  <div class="bmodal" role="dialog" aria-modal="true" aria-labelledby="bmodalTitle" aria-hidden="true" data-bmodal>
+    <div class="bmodal__panel">
+      <button class="icon-btn bmodal__close" type="button" data-bmodal-close aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+      <ol class="bsteps" aria-label="Booking steps">
+        <li class="is-active" data-bstep-ind="1"><span>1</span>Choose room</li>
+        <li data-bstep-ind="2"><span>2</span>Guest details</li>
+        <li data-bstep-ind="3"><span>3</span>Confirmed</li>
+      </ol>
+
+      <div class="bstep is-active" data-bstep="1">
+        <h2 class="bmodal__title" id="bmodalTitle">Available rooms</h2>
+        <p class="bmodal__summary" data-b-summary></p>
+        <ul class="bresults" data-b-results></ul>
+      </div>
+
+      <form class="bstep" data-bstep="2" data-b-form>
+        <h2 class="bmodal__title">Guest details</h2>
+        <div class="bpick" data-b-pick></div>
+        <div class="bform">
+          <label><span>First name</span><input name="first" required autocomplete="given-name"></label>
+          <label><span>Last name</span><input name="last" required autocomplete="family-name"></label>
+          <label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="bform__full"><span>Arrival time</span>
+            <select name="arrival"><option>I don’t know yet</option><option>Before 12:00</option><option>12:00 – 15:00</option><option>15:00 – 18:00</option><option>After 18:00</option></select></label>
+          <label class="bform__full"><span>Special requests</span><textarea name="requests" rows="2" placeholder="Celebrations, dietary needs, accessibility, a cot for a little one…"></textarea></label>
+        </div>
+        <p class="bnote"><svg class="icon icon--sm"><use href="#i-check"/></svg>Free cancellation until 48 hours before arrival. No payment is taken today.</p>
+        <div class="bactions">
+          <button class="btn btn--ghost" type="button" data-b-back>Back</button>
+          <button class="btn btn--copper" type="submit"><span class="btn__label">Confirm reservation</span><span class="btn__spinner" aria-hidden="true"></span></button>
+        </div>
+      </form>
+
+      <div class="bstep bstep--done" data-bstep="3">
+        <svg class="check" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M25 41l10 10 20-22"/></svg>
+        <p class="eyebrow">Confirmation <span data-b-code></span></p>
+        <h2 class="bmodal__title">We look forward to welcoming you.</h2>
+        <p class="bmodal__summary" data-b-final></p>
+        <button class="btn btn--copper" type="button" data-bmodal-close>Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true" data-lightbox>
+    <button class="icon-btn lightbox__close" type="button" data-lb-close aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+    <button class="round-btn lightbox__prev" type="button" data-lb-prev aria-label="Previous photo"><svg class="icon"><use href="#i-chevron-l"/></svg></button>
+    <figure class="lightbox__figure">
+      <img data-lb-img alt="">
+      <figcaption><span data-lb-cap></span><span class="lightbox__count" data-lb-count></span></figcaption>
+    </figure>
+    <button class="round-btn lightbox__next" type="button" data-lb-next aria-label="Next photo"><svg class="icon"><use href="#i-chevron-r"/></svg></button>
+  </div>
+
   <div class="toast" role="status" aria-live="polite" data-toast></div>
 
   <!-- Icon sprite -->
@@ -404,9 +748,33 @@
     <symbol id="i-bag" viewBox="0 0 24 24"><path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 10V8.5m-2 0h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron-l" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m11 12 8-8m-3 3 2 2m-4 0 1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-size" viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 7 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5 3 11l1.5-1.5 8 1L17 6a2 2 0 0 1 3 3l-4.5 4.5 1 8L15 23l-2.5-7.5L9 19v2.5L7.5 23 6 18 1 16.5 2.5 15H5l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 11h14M8 21l2-4m6 4-2-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-bag2" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.7 16a5 5 0 0 1 6.6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="19" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4H4Zm0 0v2.5M20 16v2.5M4 12h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.5" cy="14" r="1" fill="currentColor"/><circle cx="16.5" cy="14" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 9.5V8m-2 0h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="4.5" ry="3.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="10.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="10.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9.5" cy="6.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="6.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 7V5h6v2M3 12.5h18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8" fill="currentColor"/><path d="M5 8.5l7 1.5 7-1.5M12 10v4.5m0 0-3.5 6.5M12 14.5l3.5 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 0 1 .5-.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
   </svg>
 
   <script src="js/menu-data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/hotel-data.js"></script>
+  <script src="js/hotel.js"></script>
 </body>
 </html>

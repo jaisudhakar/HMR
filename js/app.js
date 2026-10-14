@@ -51,11 +51,12 @@
   const sectionObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      const id = e.target.id === 'top' ? 'menu' : e.target.id;
+      const id = { hotel: 'amenities', reviews: 'gallery', location: 'contact', book: 'rooms' }[e.target.id] || e.target.id;
       navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['menu', 'hotel', 'contact'].forEach(id => sectionObs.observe(document.getElementById(id)));
+  ['book', 'menu', 'rooms', 'amenities', 'hotel', 'gallery', 'reviews', 'location', 'contact']
+    .forEach(id => { const el = document.getElementById(id); el && sectionObs.observe(el); });
 
   // Mobile nav
   const burger = $('[data-burger]');
@@ -493,7 +494,7 @@
   function closeLayer(el) {
     el.classList.remove('is-open');
     el.setAttribute('aria-hidden', 'true');
-    if (!$$('.drawer.is-open, .sheet.is-open, .confirm.is-open').length) document.body.classList.remove('is-locked');
+    if (!$$('.drawer.is-open, .sheet.is-open, .confirm.is-open, .bmodal.is-open, .lightbox.is-open').length) document.body.classList.remove('is-locked');
     if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
   }
 
@@ -780,4 +781,7 @@
   setCat('all');
   setFeatured(byId.wagyu, { animate: false });
   updateCartUI();
+
+  // Shared helpers for js/hotel.js
+  window.HMR = { openLayer, closeLayer, toast, observeReveals, countUp, escapeHtml, store, reduceMotion };
 })();
