@@ -1,0 +1,23 @@
+{
+  "name": "hmr-hotels",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HMR Hotels & Resorts — luxury hotel website, home of the HMR dum biryani",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

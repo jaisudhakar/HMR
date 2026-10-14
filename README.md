@@ -1,59 +1,43 @@
 # HMR Hotels & Resorts
 
-An animated hotel website for **HMR Hotels & Resorts**, home of the HMR dum biryani, with a full in-room dining menu. It is a static site built with plain HTML, CSS and JavaScript, so there is no build step.
+A luxury hotel website for **HMR Hotels & Resorts**, home of the HMR dum biryani. Built with **Next.js 16 (App Router)**, React 19 and TypeScript.
 
 ## Run it
 
-Open `index.html` in a browser, or serve the folder:
-
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start   # production build
 ```
 
-## What's inside
+Deploys to Vercel as-is (import the repository; no settings needed).
+
+## What's on the page
 
 | Section | Highlights |
 | --- | --- |
-| **Hero**, "Our famous biryani, to your door." | Branded preloader, a copper handi whose dough-sealed lid lifts with rising steam (and a **Lift lid / Close lid** button), drifting gold dust, mouse parallax and counting stats |
-| **The art of dum** | The four steps of making the biryani (marinate, layer, seal, dum) on a timeline that draws itself, plus one-click **Add to order** for the Signature and Family handis |
-| **Category strip** | Biryani, Breakfast, All-day, Desserts, Wine & Bar. Each one jumps to the menu with that filter applied |
-| **Our Menu** | Live search (press `/`), category chips with a sliding active pill, a list/grid toggle and staggered card animations |
-| **Featured dish panel** | Hover or click a dish to preview it on a copper pedestal. Drag to tilt it in 3D, swipe further to go to the next dish, or pick from the thumbnails |
-| **Dish detail sheet** | Photo, description, dietary badges, wine pairing, a quantity stepper and an add button |
-| **Your Order drawer** | Images fly into the cart, quantity steppers and remove, delivery slots (ASAP or the next half hours), kitchen notes, an animated total, and charge to room or pay on delivery |
-| **Order confirmation** | Animated check mark, an order number and a live tracker (Received → Preparing → On its way) |
-| **Top bar & header** | Phone, email, a "book direct" offer, five-link navigation and a **Book a stay** button |
-| **Booking bar** | Check-in and check-out dates, a guests and rooms picker, room type and **Check availability** |
-| **Booking flow** | Three steps: available rooms with nightly and total prices, guest details, then a confirmation code |
-| **Rooms & Suites** | A draggable carousel of four rooms with size, bed, guests, view, features and a "from" price per night |
-| **Experiences** | A tile grid for Ember restaurant, the infinity pool, spa, Copper Bar, fitness studio and concierge, plus a services row |
-| **About & awards** | Stats that count up as you scroll to them, and award badges |
-| **Gallery** | Filterable photo grid with a full-screen viewer (arrow keys and swipe) |
-| **Guest reviews** | Overall rating, animated category bars and an auto-rotating review carousel |
-| **Location** | Address, travel times, directions and call buttons, and an animated map |
-| **Footer** | HMR Rewards sign-up, link columns, social icons and legal links |
+| **Header** | Top bar with phone, email and the book-direct offer; navigation that follows the section in view; room number picker; order button; **Book a stay** |
+| **Opening screen** | Full-screen photo slideshow (signature biryani, rooftop pool, Presidential Suite, lobby) with slow zoom, progress bars, drifting embers and a headline that rises in |
+| **Booking bar** | Check-in and check-out, guests and rooms, room type, **Check availability** |
+| **The art of dum** | Biryani story with photography, a four-step timeline that draws itself, and one-click ordering for the Signature and Family handis |
+| **In-room dining menu** | Biryani first, then mains, breakfast, salads, sides, desserts and drinks; live search (press `/`), category filters, list or grid view, featured dish you can drag to turn, dish details, order drawer with delivery times, and an order tracker |
+| **Rooms & Suites** | Draggable carousel with size, bed, guests, view, features and nightly price, linked to a three-step booking flow |
+| **Experiences** | Ember restaurant, infinity pool, spa, bar, fitness studio and concierge |
+| **About, gallery, reviews, location** | Counting stats, awards, a filterable gallery with full-screen viewer, rotating guest reviews and travel times |
 
-The site also remembers the guest's room number, cart and preferred layout in `localStorage`. It works on phones (floating cart bar, bottom sheets, full-screen nav), supports keyboard use (`Esc` closes overlays) and respects `prefers-reduced-motion`.
-
-## Placeholder content to replace
-
-- **Biryani images** in `assets/img/biryani/` are illustrations, not photos. Replace them with photos of your own biryani using the same file names (any size works; 900×600 suits the menu). The opening screen uses two layered images: `hero-handi.webp` (pot and biryani) and `hero-lid.webp` (lid only, transparent background).
-- **Hotel images** in `assets/img/hotel/` are illustrations, not photos. Put real photos in `assets/img/hotel/` and update the `img` paths in `js/hotel-data.js` and the `<img>` tags in the Experiences section of `index.html`.
-- **Contact details**: the phone number, email addresses and the address "1 Harbour Boulevard, City Centre" are made up. The map is an illustration, and **Get directions** searches Google Maps for "HMR Hotels & Resorts".
-- **Numbers**: the room count, prices, review scores, review count, reviews and awards are sample content.
-- **Demo only**: bookings, food orders and the newsletter sign-up show confirmations in the browser but aren't sent anywhere.
-
-## Editing the menu
-
-Every dish lives in `js/menu-data.js`. The Biryani category comes first, and `signature` is the dish shown in the featured panel on load. Each one has a name, category, price, preparation time, description, dietary tags, an optional pairing and an optional photo. A dish without a photo shows an HMR monogram plate instead.
+## Where things live
 
 ```
-index.html
-css/styles.css
-js/menu-data.js   ← menu items and categories
-js/hotel-data.js  ← rooms, gallery and reviews
-js/app.js         ← menu, cart and animation
-js/hotel.js       ← booking, rooms, gallery and reviews
-assets/img/       ← dish photography (hotel/ holds the room and venue illustrations)
+src/app/            layout, page and global styles
+src/components/     one file per area (Header, Hero, Booking, Menu, Overlays, Hotel…)
+src/data/menu.ts    dishes, prices and categories
+src/data/hotel.ts   rooms, gallery and reviews
+src/data/photos.ts  every photograph used on the site
+public/img/food/    food photography from the original menu mockups
 ```
+
+## Before going live
+
+- **Photography.** Hotel and biryani photos are free-licence stock images from [Pexels](https://www.pexels.com/license/), loaded from the Pexels CDN as placeholders. Replace them with HMR's own photos by editing `src/data/photos.ts` (put files in `public/img/` and use paths like `/img/hotel/lobby.jpg`). If a photo ever fails to load, the site tries the next one listed, then shows a plain tile.
+- **Content.** Phone, email, address, prices, room count, review scores, reviews and awards are sample content.
+- **Ordering and booking** show confirmations in the browser but are not connected to a booking engine or kitchen system yet.
